@@ -2,13 +2,13 @@
 <title>
 </title>
 <body>
-1 + 2 = <span id="result">?</span>
+2 + 3 = <span id="result">?</span>
 </body>
 <script>
     fetch('target/wasm32-unknown-unknown/release/wasm.wasm')
         .then(response => response.arrayBuffer())
         .then(bytes => WebAssembly.instantiate(bytes))
-        .then(obj => document.getElementById('result').textContent="3")
+        .then(obj => document.getElementById('result').textContent=obj.instance.exports.add(2, 3))
         .catch(error => console.log("error: " + error));
 </script>
 </html>
