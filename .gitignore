@@ -1,4 +1,4 @@
 /target/*
 !/target/wasm32-unknown-unknown/release/
-!/target/wasm32-unknown-unknown/release/*
+!/target/wasm32-unknown-unknown/release/wasm.wasm
 Cargo.lock
